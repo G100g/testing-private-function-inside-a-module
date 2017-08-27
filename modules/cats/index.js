@@ -1,6 +1,4 @@
-function createFunnyName(name) {
-  return `^^${name}^^`;
-}
+const createFunnyName = require('./modules/createFunnyName');
 
 module.exports = {
   createCat(name) {
@@ -8,8 +6,5 @@ module.exports = {
       name: name,
       funnyName: createFunnyName(name)
     };
-  },
-  __private__: {
-    createFunnyName
   }
 };
