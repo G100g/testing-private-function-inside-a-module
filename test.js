@@ -9,14 +9,9 @@ test("Should return an object", t => {
 });
 
 test("Cat name should be funny", t => {
-  t.equal(
-    catCreator.createCat(name).funnyName,
-    `^^${name}^^`,
-    "Should contain ^^ before and after the name"
-  );
-  t.ok(
-    catCreator.createCat(name).funnyName.indexOf(name) === 2,
-    "Should contain the name"
-  );
+  const result = catCreator.__private__.createFunnyName(name);
+
+  t.equal(result, `^^${name}^^`, "Should contain ^^ before and after the name");
+  t.ok(result.indexOf(name) === 2, "Should contain the name");
   t.end();
 });

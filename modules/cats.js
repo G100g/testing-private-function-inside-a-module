@@ -8,5 +8,8 @@ module.exports = {
       name: name,
       funnyName: createFunnyName(name)
     };
+  },
+  __private__: {
+    createFunnyName
   }
 };
